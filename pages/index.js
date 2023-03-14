@@ -88,7 +88,7 @@ export default function Home({ configurs, services }) {
               <div className="realisation_n_iem">
                 <div className="cover"></div>
                 <img
-                  src={`http://localhost/fidbagraphics/2023/fevrier/cico/back-office/Views/uploads-images/${item.imagenavant}`}
+                  src={`https://cico-admin.ritach.net/Views/uploads-images/${item.imagenavant}`}
                 />
                 <div className="cover2">
                   <span className="">En savoir plus</span>
@@ -142,11 +142,11 @@ export default function Home({ configurs, services }) {
 }
 export let getServerSideProps = async () => {
   const respons = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?configs=cico"
+    "https://cico-admin.ritach.net/api-v1?configs=cico"
   );
 
   const posts_response = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?datas=all"
+    "https://cico-admin.ritach.net/api-v1?datas=all"
   );
   const configurs = await respons.json();
   const services = await posts_response.json();
