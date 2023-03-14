@@ -36,7 +36,7 @@ export default function about({ configurs }) {
         <div className="container_fluid">{configurs.Apropos}</div>
         <div class="question mb-5">
           Avez-vous une question ?{" "}
-          <a href="contact" class="btn btn-warning">
+          <a href="../contact" class="btn btn-warning">
             Nous contacter
           </a>
         </div>
@@ -58,7 +58,7 @@ export default function about({ configurs }) {
 }
 export let getServerSideProps = async () => {
   const respons = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?configs=cico"
+    "https://cico-admin.ritach.net/api-v1?configs=cico"
   );
   const configurs = await respons.json();
   return {
