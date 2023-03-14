@@ -35,7 +35,7 @@ export default function Home({ configurs, service_data, services }) {
         <div className="relative_block">
           <div className="section_1">
             <img
-              src={`http://localhost/fidbagraphics/2023/fevrier/cico/back-office/Views/uploads-images/${service_data.imagenavant}`}
+              src={`https://cico-admin.ritach.net/Views/uploads-images/${service_data.imagenavant}`}
             />
 
             <h2>{service_data.titre}</h2>
@@ -49,7 +49,7 @@ export default function Home({ configurs, service_data, services }) {
                   <div className="article">
                     <div className="image_en_avant">
                       <img
-                        src={`http://localhost/fidbagraphics/2023/fevrier/cico/back-office/Views/uploads-images/${item.imagenavant}`}
+                        src={`https://cico-admin.ritach.net/Views/uploads-images/${item.imagenavant}`}
                       />
                     </div>
                     <div className="text">
@@ -82,7 +82,7 @@ export default function Home({ configurs, service_data, services }) {
   );
 }
 const apiurls =
-  "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?post=";
+  "https://cico-admin.ritach.net/api-v1?post=";
 
 export const getServerSideProps = async ({ params }) => {
   const router = params;
@@ -91,11 +91,11 @@ export const getServerSideProps = async ({ params }) => {
   const service = await fetch(`${apiurls}${id}`);
 
   const respons = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?configs=cico"
+    "https://cico-admin.ritach.net/api-v1?configs=cico"
   );
 
   const posts_response = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?datas=all"
+    "https://cico-admin.ritach.net/api-v1?datas=all"
   );
   const configurs = await respons.json();
   const services = await posts_response.json();
