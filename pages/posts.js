@@ -83,11 +83,11 @@ export default function blog({ publication, configurs }) {
 }
 export let getServerSideProps = async () => {
   const respons = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?configs=cico"
+    "https://cico-admin.ritach.net/api-v1?configs=cico"
   );
 
   const posts_respons = await fetch(
-    "http://localhost/fidbagraphics/2023/fevrier/cico/back-office/api-v1?datas=all"
+    "https://cico-admin.ritach.net/api-v1?datas=all"
   );
   const configurs = await respons.json();
   const publication = await posts_respons.json();
